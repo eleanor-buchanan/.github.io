@@ -1,577 +1,410 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-bs-theme="light">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Eleanor (Ella) Buchanan">
-    <meta name="description" content="Eleanor (Ella) Buchanan is an International Space University student focusing on spaceflight human performance and emergency medicine, also showcasing an art portfolio.">
-    <meta property="og:title" content="Eleanor (Ella) Buchanan - ISU Student & Artist">
-    <meta property="og:description" content="Eleanor (Ella) Buchanan is an International Space University student focusing on spaceflight human performance and emergency medicine, also showcasing an art portfolio.">
-    <meta property="og:type" content="website">
-    <title>Eleanor (Ella) Buchanan - ISU Student & Artist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eleanor Buchanan - Artist Portfolio</title>
+  <meta name="description" content="A personal art portfolio for Eleanor Buchanan, showcasing her creative works and academic journey.">
+  <meta name="author" content="Eleanor Buchanan">
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/">
+  <meta property="og:title" content="Eleanor Buchanan - Artist Portfolio">
+  <meta property="og:description" content="A personal art portfolio for Eleanor Buchanan, showcasing her creative works and academic journey.">
+  <meta property="og:image" content="https://yourusername.github.io/social-share.jpg"> <!-- Optional: Add a social share image -->
 
-    <style>
-        /* ISU-inspired Colors */
-        :root {
-            --isu-blue: #0b3d91;
-            --isu-gold: #f0b429;
-            --isu-ink:  #0d1b2a;
-            --isu-sky:  #e6f1ff;
-        }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        /* Light theme defaults */
-        [data-bs-theme="light"] {
-            --bs-body-color: var(--isu-ink);
-            --bs-body-bg: var(--isu-sky);
-            --bs-primary: var(--isu-blue);
-            --bs-secondary: #6c757d; /* Bootstrap default */
-            --bs-tertiary-bg: #f8f9fa; /* Lighter background for some elements */
-            --bs-border-color: rgba(0, 0, 0, 0.125);
-        }
+  <style>
+    /* Custom CSS Properties for Art Gallery Neutral Theme */
+    :root {
+      --gallery-white: #ffffff;
+      --gallery-light-gray: #f8f9fa; /* Light background for sections */
+      --gallery-medium-gray: #dee2e6; /* Borders, separators */
+      --gallery-dark-gray: #343a40; /* Text */
+      --gallery-accent: #007bff; /* For links/buttons, can be adjusted */
 
-        /* Dark theme overrides */
-        [data-bs-theme="dark"] {
-            --bs-body-color: #f8f9fa; /* Light text */
-            --bs-body-bg: var(--isu-ink);
-            --bs-primary: var(--isu-gold);
-            --bs-secondary: #adb5bd; /* Lighter secondary */
-            --bs-tertiary-bg: #212529; /* Darker background for some elements */
-            --bs-border-color: rgba(255, 255, 255, 0.125);
-        }
+      /* System font stack for clean reading */
+      --bs-body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: var(--bs-body-font-family);
+      color: var(--gallery-dark-gray);
+      background-color: var(--gallery-light-gray);
+    }
 
-        .navbar {
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
+    [data-bs-theme="dark"] body {
+      background-color: #212529; /* Dark background */
+      color: #e2e6ea; /* Light text */
+    }
 
-        .hero-section {
-            background-color: var(--bs-primary);
-            color: var(--bs-body-bg); /* Use body-bg for contrast */
-            padding: 4rem 0;
-            text-align: center;
-        }
-        [data-bs-theme="dark"] .hero-section {
-            background-color: var(--isu-ink);
-            color: var(--bs-body-color);
-        }
+    [data-bs-theme="dark"] .navbar {
+        background-color: #343a40 !important;
+    }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-        }
+    [data-bs-theme="dark"] .card {
+        background-color: #495057;
+        color: #e2e6ea;
+        border-color: #6c757d;
+    }
 
-        .btn-isu-primary {
-            background-color: var(--isu-gold);
-            color: var(--isu-ink);
-            border-color: var(--isu-gold);
-        }
-        .btn-isu-primary:hover {
-            background-color: #d19a1f; /* Slightly darker gold */
-            border-color: #d19a1f;
-            color: var(--isu-ink);
-        }
+    .navbar {
+      background-color: var(--gallery-white);
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    }
 
-        .section-padding {
-            padding: 4rem 0;
-        }
+    .hero {
+      padding: 6rem 0;
+      background-color: var(--gallery-white);
+      text-align: center;
+    }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-            border-left: 2px solid var(--bs-primary);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -0.5rem;
-            width: 1rem;
-            height: 1rem;
-            background-color: var(--bs-primary);
-            border-radius: 50%;
-            border: 2px solid var(--bs-body-bg);
-        }
-        [data-bs-theme="dark"] .timeline-item::before {
-            border: 2px solid var(--isu-ink);
-        }
+    .section-spacing {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 
-        .card {
-            border-color: var(--bs-border-color);
-            background-color: var(--bs-tertiary-bg);
-        }
+    .card {
+        border-color: var(--gallery-medium-gray);
+        background-color: var(--gallery-white);
+    }
 
-        .portfolio-image {
-            width: 100%;
-            height: 250px; /* Fixed height for consistent look */
-            object-fit: cover; /* Ensures images cover the area without distortion */
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
+    .footer {
+      background-color: var(--gallery-dark-gray);
+      color: var(--gallery-light-gray);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
 
-        #edit-checklist ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        #edit-checklist li {
-            margin-bottom: 0.5rem;
-        }
-        #edit-checklist li::before {
-            content: "\2713"; /* Checkmark icon */
-            margin-right: 0.5rem;
-            color: var(--bs-primary);
-        }
-    </style>
+    /* Skip link styling */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000;
+        color: #fff;
+        padding: 8px;
+        z-index: 1000;
+        text-decoration: none;
+    }
 
-    <!-- JSON-LD for SEO -->
-    <script type="application/ld+json">
+    .skip-link:focus {
+        top: 0;
+    }
+  </style>
+
+  <!-- JSON-LD for SEO (Optional) -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Eleanor (Ella) Buchanan",
+      "name": "Eleanor Buchanan",
       "email": "mailto:eleanor.buchanan@community.isunet.edu",
-      "url": "https://eleanorbuchanan.github.io/",
+      "url": "https://yourusername.github.io/",
       "sameAs": [
         "https://www.linkedin.com/in/eleanor-ella-buchanan-90884122a/"
       ]
     }
-    </script>
+  </script>
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a class="visually-hidden-focusable p-3" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand text-primary fw-bold" href="#">Ella Buchanan</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+  <header>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ella Buchanan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#artworks">Artworks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cv">CV</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <button id="themeToggle" class="btn btn-link nav-link" aria-label="Toggle theme">
+                    <i class="bi bi-circle-half"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Art Portfolio</a> <!-- New Nav Item -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#experience">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#cv">CV</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                        <li class="nav-item ms-lg-3">
-                            <button class="btn btn-outline-secondary btn-sm" id="themeToggle" aria-label="Toggle theme">
-                                <i class="bi bi-circle-half"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12">
-                        <h1 class="display-4 mb-3">Eleanor (Ella) Buchanan</h1>
-                        <p class="lead mb-4">I just graduated from Brown University with a degree in Biology and Visual Art. I'm now pursuing my Master's at the International Space University, and I intend to go emergency medicine.</p>
-                        <div class="d-grid gap-2 d-md-block">
-                            <a class="btn btn-isu-primary btn-lg me-md-2 mb-2 mb-md-0" href="#projects">Projects</a>
-                            <a class="btn btn-outline-light btn-lg me-md-2 mb-2 mb-md-0" href="#portfolio">Art Portfolio</a> <!-- Added link here -->
-                            <a class="btn btn-outline-light btn-lg me-md-2 mb-2 mb-md-0" href="#cv">CV</a>
-                            <a class="btn btn-outline-light btn-lg" href="#contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section-padding bg-body-tertiary">
-            <div class="container">
-                <h2 class="text-center text-primary mb-5">About Me</h2>
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <p class="lead">Hello! I'm Ella Buchanan. I am currently an MSS student in the class of 2026 at the International Space University in Strasbourg, France. My background is in Biology and Visual Art from Brown University. I am passionate about the intersection of space and human health, aiming for a career in emergency medicine.</p>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <h3 class="h5 text-primary">Focus Areas</h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-star-fill text-isu-gold me-2"></i>Spaceflight Physiology</li>
-                                    <li><i class="bi bi-star-fill text-isu-gold me-2"></i>Emergency Medicine</li>
-                                    <li><i class="bi bi-star-fill text-isu-gold me-2"></i>Closed-Loop Nutrition Systems</li>
-                                    <li><i class="bi bi-star-fill text-isu-gold me-2"></i>Biotech</li>
-                                    <li><i class="bi bi-star-fill text-isu-gold me-2"></i>Creative Projects</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="h5 text-primary">Tools & Skills</h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>Blender</li>
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>Office360</li>
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>Github</li>
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>R</li>
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>Carpentry</li>
-                                    <li><i class="bi bi-gear-fill text-isu-gold me-2"></i>Oil Paints</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <h3 class="h5 text-primary">Languages</h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-globe text-isu-gold me-2"></i>English (Native)</li>
-                                    <li><i class="bi bi-globe text-isu-gold me-2"></i>Spanish (Basic)</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="h5 text-primary">Interests</h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-heart-fill text-isu-gold me-2"></i>Painting</li>
-                                    <li><i class="bi bi-heart-fill text-isu-gold me-2"></i>Running</li>
-                                    <li><i class="bi bi-heart-fill text-isu-gold me-2"></i>Fiction Writing</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section-padding">
-            <div class="container">
-                <h2 class="text-center text-primary mb-5">Projects</h2>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <!-- Project Card 1 (Placeholder) -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title text-primary">Project One (Coming Soon!)</h3>
-                                <p class="card-text text-muted">Details for this project are currently being developed. Stay tuned for updates!</p>
-                                <ul>
-                                    <li><small class="text-muted">Tools: [Pending]</small></li>
-                                    <li><small class="text-muted">Method: [Pending]</small></li>
-                                    <li><small class="text-muted">Outcome: [Pending]</small></li>
-                                </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <small class="text-warning">Project details to be added soon.</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 2 (Placeholder) -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title text-primary">Project Two (In Progress)</h3>
-                                <p class="card-text text-muted">This space will feature my second key project. Content will be updated as work progresses.</p>
-                                <ul>
-                                    <li><small class="text-muted">Tools: [Pending]</small></li>
-                                    <li><small class="text-muted">Method: [Pending]</small></li>
-                                    <li><small class="text-muted">Outcome: [Pending]</small></li>
-                                </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <small class="text-warning">Project details to be added soon.</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 3 (Placeholder) -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title text-primary">Project Three (Future Endeavor)</h3>
-                                <p class="card-text text-muted">A dedicated section for my third project, showcasing new skills and achievements.</p>
-                                <ul>
-                                    <li><small class="text-muted">Tools: [Pending]</small></li>
-                                    <li><small class="text-muted">Method: [Pending]</small></li>
-                                    <li><small class="text-muted">Outcome: [Pending]</small></li>
-                                </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <small class="text-warning">Project details to be added soon.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Art Portfolio Section -->
-        <section id="portfolio" class="section-padding bg-body-tertiary">
-            <div class="container">
-                <h2 class="text-center text-primary mb-5">Art Portfolio</h2>
-                <div class="row">
-                    <div class="col-md-8 mx-auto text-center mb-4">
-                        <p class="lead">As a Visual Art graduate from Brown University, I love expressing creativity through various mediums. Here you'll find a selection of my works, predominantly oil paintings.</p>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                    <!-- Art Piece 1 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/400x250/FFD700/000000?text=Oil+Painting+1" class="card-img-top portfolio-image" alt="Placeholder for Oil Painting 1">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Piece Title One</h3>
-                                <p class="card-text"><small class="text-muted">Oil on canvas. Year: [YYYY].</small></p>
-                                <p class="card-text">A brief description of the artwork, its inspiration, or techniques used.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Art Piece 2 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/400x250/ADD8E6/000000?text=Oil+Painting+2" class="card-img-top portfolio-image" alt="Placeholder for Oil Painting 2">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Piece Title Two</h3>
-                                <p class="card-text"><small class="text-muted">Oil on canvas. Year: [YYYY].</small></p>
-                                <p class="card-text">Another example of my work, exploring themes of [theme] with [technique].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Art Piece 3 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/400x250/90EE90/000000?text=Mixed+Media+Art" class="card-img-top portfolio-image" alt="Placeholder for Mixed Media Art">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Piece Title Three</h3>
-                                <p class="card-text"><small class="text-muted">Mixed Media. Year: [YYYY].</small></p>
-                                <p class="card-text">An experiment in mixed media, combining [elements] to create [effect].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Art Piece 4 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/400x250/FFB6C1/000000?text=Digital+Art+Piece" class="card-img-top portfolio-image" alt="Placeholder for Digital Art Piece">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Piece Title Four</h3>
-                                <p class="card-text"><small class="text-muted">Digital painting. Year: [YYYY].</small></p>
-                                <p class="card-text">Exploring digital tools to create vivid imagery and narrative.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- You can add more .col elements with .card for additional images -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="section-padding">
-            <div class="container">
-                <h2 class="text-center text-primary mb-5">Experience</h2>
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-1">Lab Member with Dr. Jim Head</h3>
-                            <p class="text-muted mb-2">Brown University | 2024-2025</p>
-                            <p>Contributed to research efforts within Dr. Head's lab, gaining hands-on experience in biological studies.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-1">Lab Member with Dr. Peter Lee</h3>
-                            <p class="text-muted mb-2">Brown University | 2024-2025</p>
-                            <p>Engaged in diverse laboratory tasks and assisted with ongoing projects, expanding my scientific skill set.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-1">Summer Internship with Dr. Rebecca Mountain</h3>
-                            <p class="text-muted mb-2">MaineHealth Institute for Research | Summer 2025</p>
-                            <p>Participated in a summer research internship, focusing on specific health-related projects and data analysis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CV Section -->
-        <section id="cv" class="section-padding bg-body-tertiary">
-            <div class="container text-center">
-                <h2 class="text-primary mb-4">My Curriculum Vitae</h2>
-                <div id="cvNote" class="alert alert-info" role="alert">
-                    Add <code>cv.pdf</code> to the repository root to enable the CV button.
-                </div>
-                <button id="cvBtn" class="btn btn-isu-primary btn-lg" style="display: none;" onclick="window.open('cv.pdf', '_blank')" aria-label="Open CV in new tab">
-                    <i class="bi bi-file-earmark-person me-2"></i>Open CV
-                </button>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding">
-            <div class="container text-center">
-                <h2 class="text-primary mb-4">Get in Touch</h2>
-                <p class="lead mb-3">I'd love to connect! You can reach me via email:</p>
-                <p class="h4 mb-4">
-                    <span id="email" class="text-primary"></span>
-                </p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a id="mailLink" class="btn btn-isu-primary btn-lg" href="#" aria-label="Send email">
-                        <i class="bi bi-envelope-fill me-2"></i>Send Email
-                    </a>
-                    <button id="copyEmailBtn" class="btn btn-outline-primary btn-lg" aria-label="Copy email to clipboard">
-                        <i class="bi bi-clipboard me-2"></i>Copy Email
-                    </button>
-                </div>
-                <div id="copyFeedback" class="mt-3 text-success" style="display: none;">Email copied!</div>
-
-                <h3 class="h5 text-primary mt-5">Connect with me:</h3>
-                <div class="d-flex justify-content-center gap-3 fs-3">
-                    <a href="https://www.linkedin.com/in/eleanor-ella-buchanan-90884122a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                        <i class="bi bi-linkedin text-primary"></i>
-                    </a>
-                    <!-- Placeholder for GitHub if it exists -->
-                    <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                        <i class="bi bi-github text-primary"></i>
-                    </a> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Edit Checklist Section -->
-        <section id="edit-checklist" class="section-padding bg-body-tertiary">
-            <div class="container">
-                <h2 class="text-center text-primary mb-4">Your Edit Checklist</h2>
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <ul class="text-muted">
-                            <li>Review all text for accuracy.</li>
-                            <li>Update Project sections with your work.</li>
-                            <li>**Replace placeholder images and descriptions in the Art Portfolio.**</li>
-                            <li>Add your profile image (if applicable, by replacing <code>profile.jpg</code>).</li>
-                            <li>Add your <code>cv.pdf</code> to enable the CV button.</li>
-                            <li>Consider adding a GitHub link if you have one.</li>
-                            <li>Customize colors further if desired (in the <code>:root</code> CSS).</li>
-                            <li>Share your site!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white-50 py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-1">&copy; <span id="year"></span> Eleanor (Ella) Buchanan. Unofficial student page.</p>
-            <p class="mb-0 small">"International Space University" named here for study use only.</p>
+            </li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Eleanor (Ella) Buchanan</h1>
+        <p class="lead mb-4">My name is Ella Buchanan. I am 23, a recent graduate from Brown University, and excited to share my cumulative work with the world. This is my art gallery; It is full of many things. Please peruse.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
+          <a href="#artworks" class="btn btn-primary btn-lg px-4 me-md-2" role="button">Gallery</a>
+          <a href="#cv" class="btn btn-outline-secondary btn-lg px-4 me-md-2" role="button">CV</a>
+          <a href="#contact" class="btn btn-outline-secondary btn-lg px-4" role="button">Contact</a>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- About Section -->
+    <section id="about" class="container section-spacing">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="mb-4">About Me</h2>
+          <p>Hi, I'm Ella. I'm currently pursuing a Masters of Space Science at the International Space University, 2026, in Strasbourg, France. My journey through art and academics has shaped my unique perspective, and I enjoy exploring the intersection of creativity and science.</p>
 
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
+          <h3 class="mt-5">Skills</h3>
+          <ul class="list-unstyled d-flex flex-wrap gap-2">
+            <li class="badge bg-secondary">Oil Painting</li>
+            <li class="badge bg-secondary">Carpentry</li>
+            <li class="badge bg-secondary">Digital Media</li>
+            <li class="badge bg-secondary">Video Editing</li>
+            <li class="badge bg-secondary">3D Modeling/Animation</li>
+            <li class="badge bg-secondary">Traditional Animation</li>
+          </ul>
 
-        // Set initial theme based on localStorage or system preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            htmlElement.setAttribute('data-bs-theme', savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            htmlElement.setAttribute('data-bs-theme', 'dark');
+          <h3 class="mt-5">Languages</h3>
+          <ul class="list-unstyled d-flex flex-wrap gap-2">
+            <li class="badge bg-secondary">English</li>
+            <li class="badge bg-secondary">Basic Spanish</li>
+          </ul>
+
+          <h3 class="mt-5">Interests</h3>
+          <ul class="list-unstyled d-flex flex-wrap gap-2">
+            <li class="badge bg-secondary">Running</li>
+            <li class="badge bg-secondary">Fiction Writing</li>
+            <li class="badge bg-secondary">Science</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artworks Section -->
+    <section id="artworks" class="container section-spacing bg-light">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="mb-5 text-center">My Artworks</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Artwork 1 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <!-- If you have an image, place it here -->
+                <div class="card-img-top text-center p-3 text-muted" style="height: 180px; display: flex; align-items: center; justify-content: center; background-color: var(--gallery-medium-gray);">
+                    [Image placeholder for Artwork 1]
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Placeholder Title 1</h5>
+                  <p class="card-text"><small class="text-muted">Date: YYYY-MM-DD</small></p>
+                  <p class="card-text">Medium: Mixed Media</p>
+                </div>
+              </div>
+            </div>
+            <!-- Artwork 2 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-img-top text-center p-3 text-muted" style="height: 180px; display: flex; align-items: center; justify-content: center; background-color: var(--gallery-medium-gray);">
+                    [Image placeholder for Artwork 2]
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Placeholder Title 2</h5>
+                  <p class="card-text"><small class="text-muted">Date: YYYY-MM-DD</small></p>
+                  <p class="card-text">Medium: Digital Art</p>
+                </div>
+              </div>
+            </div>
+            <!-- Artwork 3 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-img-top text-center p-3 text-muted" style="height: 180px; display: flex; align-items: center; justify-content: center; background-color: var(--gallery-medium-gray);">
+                    [Image placeholder for Artwork 3]
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Placeholder Title 3</h5>
+                  <p class="card-text"><small class="text-muted">Date: YYYY-MM-DD</small></p>
+                  <p class="card-text">Medium: Sculpture</p>
+                </div>
+              </div>
+            </div>
+            <!-- Placeholder for additional artworks, up to 15 total if needed -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body text-center d-flex align-items-center justify-content-center text-muted">
+                    <p>More artworks coming soon!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (Placeholder as no details provided) -->
+    <section id="experience" class="container section-spacing">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="mb-4">Experience</h2>
+          <p class="text-muted">Details about academic or artistic experience will appear here. Please provide information to fill this section.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="container section-spacing bg-light">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mb-4">Curriculum Vitae</h2>
+          <div id="cvBtn" style="display:none;">
+            <p>Download my CV for more details on my academic and professional journey.</p>
+            <a href="cv.pdf" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Open CV</a>
+          </div>
+          <div id="cvNote">
+            <p class="text-muted">Add cv.pdf to your repository root to enable the CV button.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container section-spacing">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mb-4">Contact Me</h2>
+          <p>I'd love to connect! You can reach me via email:</p>
+          <p class="lead fs-4"><span id="email"></span></p>
+          <div class="d-grid gap-2 d-md-flex justify-content-center">
+            <a id="mailLink" href="#" class="btn btn-primary btn-lg px-4 me-md-2"><i class="bi bi-envelope-fill me-2"></i>Email Me</a>
+            <button id="copyEmailBtn" class="btn btn-outline-secondary btn-lg px-4">
+                <i class="bi bi-clipboard me-2"></i>Copy Email
+                <span class="ms-2 text-success visually-hidden" id="copyFeedback">Copied!</span>
+            </button>
+          </div>
+          <p class="mt-4">Connect with me on social media:</p>
+          <div class="d-flex justify-content-center gap-3 fs-3">
+            <a href="https://www.linkedin.com/in/eleanor-ella-buchanan-90884122a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <!-- Optional: Add other links here if provided -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit Checklist Section -->
+    <section id="edit-checklist" class="container section-spacing bg-light">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="mb-4">Edit Checklist</h2>
+          <p>Here are a few things you might want to edit or add:</p>
+          <ul>
+            <li>[ ] Replace placeholder artwork titles, dates, and mediums in the #artworks section.</li>
+            <li>[ ] Add images for your artworks (update the `div` with `card-img-top`). Remember `alt` text!</li>
+            <li>[ ] Add content to the #experience section.</li>
+            <li>[ ] Create a `cv.pdf` file and place it in the same directory as this `index.html` file to enable the CV button.</li>
+            <li>[ ] Update the Open Graph `og:image` meta tag with a suitable social share image.</li>
+            <li>[ ] If you have a GitHub profile, consider adding it to the contact links and JSON-LD.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mb-0">&copy; <span id="year"></span> Eleanor Buchanan. Unofficial student page.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement; // This targets the <html> tag
+
+    // Set initial theme based on localStorage or system preference
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+        htmlElement.setAttribute('data-bs-theme', storedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        htmlElement.setAttribute('data-bs-theme', 'dark');
+    }
+
+    // Update button icon based on current theme
+    function updateThemeToggleIcon() {
+        const currentTheme = htmlElement.getAttribute('data-bs-theme');
+        if (currentTheme === 'dark') {
+            themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
         } else {
-            htmlElement.setAttribute('data-bs-theme', 'light');
+            themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
         }
+    }
+    updateThemeToggleIcon(); // Call initially
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggleIcon(); // Update icon after changing theme
+    });
 
-        // CV Check (HEAD fetch to avoid full download)
-        const cvBtn = document.getElementById('cvBtn');
-        const cvNote = document.getElementById('cvNote');
-
-        async function checkCvPdf() {
-            try {
-                const response = await fetch('cv.pdf', { method: 'HEAD' });
-                if (response.ok) {
-                    cvBtn.style.display = 'block';
-                    cvNote.style.display = 'none';
-                } else {
-                    cvBtn.style.display = 'none';
-                    cvNote.style.display = 'block';
-                }
-            } catch (error) {
-                // Fail silently if fetch is blocked or fails (e.g., CORS issues in dev)
-                cvBtn.style.display = 'none';
-                cvNote.style.display = 'block';
-                console.warn('Could not check for cv.pdf (might be due to CORS or file not found locally). Displaying note.');
-            }
+    // CV Check
+    const cvBtn = document.getElementById('cvBtn');
+    const cvNote = document.getElementById('cvNote');
+    fetch('cv.pdf', { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          cvBtn.style.display = 'block';
+          cvNote.style.display = 'none';
+        } else {
+          cvBtn.style.display = 'none';
+          cvNote.style.display = 'block';
         }
-        document.addEventListener('DOMContentLoaded', checkCvPdf);
+      })
+      .catch(() => {
+        // Fail silently, keep note visible
+        cvBtn.style.display = 'none';
+        cvNote.style.display = 'block';
+      });
 
+    // Contact Helpers
+    const emailText = "eleanor.buchanan@community.isunet.edu";
+    document.getElementById('email').textContent = emailText;
+    document.getElementById('mailLink').href = `mailto:${emailText}`;
 
-        // Contact Helpers
-        const emailText = "eleanor.buchanan@community.isunet.edu";
-        document.getElementById('email').textContent = emailText;
-        document.getElementById('mailLink').setAttribute('href', `mailto:${emailText}`);
-
-        document.getElementById('copyEmailBtn').addEventListener('click', () => {
-            navigator.clipboard.writeText(emailText).then(() => {
-                const feedback = document.getElementById('copyFeedback');
-                feedback.style.display = 'block';
-                setTimeout(() => {
-                    feedback.style.display = 'none';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy email: ', err);
-                alert('Failed to copy email. Please copy it manually: ' + emailText);
-            });
-        });
-
-        // Smooth scroll for nav links (respects prefers-reduced-motion)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    } else {
-                        targetElement.scrollIntoView({
-                            behavior: 'auto'
-                        });
-                    }
-                    // For sticky header, adjust scroll position if necessary
-                    const offset = document.querySelector('.navbar').offsetHeight;
-                    if (targetId !== '#main') { // Skip adjustment for main content skip link
-                        window.scrollBy(0, -offset);
-                    }
-                }
-            });
-        });
-    </script>
+    document.getElementById('copyEmailBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(emailText).then(() => {
+        const feedback = document.getElementById('copyFeedback');
+        feedback.classList.remove('visually-hidden');
+        setTimeout(() => {
+          feedback.classList.add('visually-hidden');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy email: ', err);
+      });
+    });
+  </script>
 </body>
 </html>
